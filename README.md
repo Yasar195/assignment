@@ -1,4 +1,4 @@
-# Kitchen Spurs Analytics Demo
+# Restaurant Analytics Demo
 
 A small event analytics application built with a Laravel API backend, a separate Next.js frontend, and PostgreSQL for persistence. The project demonstrates browser event capture, server-side ingestion, and a lightweight dashboard for restaurant-style analytics.
 
@@ -29,7 +29,7 @@ analytics dashboard
 ## Project Structure
 
 ```text
-kitchen_spurs/
+project-root/
 ├── app/                  # Laravel API backend
 │   ├── app/
 │   ├── bootstrap/
@@ -82,7 +82,7 @@ For Docker-based setup:
 From the project root:
 
 ```bash
-cd /home/yasar/Desktop/kitchen_spurs
+cd /path/to/project
 docker compose up --build
 ```
 
@@ -103,7 +103,7 @@ Docker Compose starts:
 ### 1. Backend (Laravel)
 
 ```bash
-cd /home/yasar/Desktop/kitchen_spurs/app
+cd /path/to/project/app
 composer install
 cp .env.example .env
 php artisan key:generate
@@ -127,7 +127,7 @@ DB_PASSWORD=postgres
 ### 2. Frontend (Next.js)
 
 ```bash
-cd /home/yasar/Desktop/kitchen_spurs/frontend
+cd /path/to/project/frontend
 npm install
 npm run dev -- --hostname 127.0.0.1 --port=3000
 ```
@@ -139,7 +139,7 @@ The frontend expects the backend API URL to be available through the app environ
 ### Backend (`app/.env`)
 
 ```env
-APP_NAME="Kitchen Spurs"
+APP_NAME="Restaurant Analytics"
 APP_ENV=local
 APP_DEBUG=true
 APP_KEY=base64:...
@@ -188,7 +188,7 @@ Example payload:
   "user_agent": "Mozilla/5.0",
   "ip_address": "127.0.0.1",
   "metadata": {
-    "restaurant": "Kitchen Spurs",
+    "restaurant": "Sunset Grill",
     "section": "home"
   }
 }
@@ -249,7 +249,7 @@ The Laravel backend includes feature tests for the analytics flow.
 Run tests with:
 
 ```bash
-cd /home/yasar/Desktop/kitchen_spurs/app
+cd /path/to/project/app
 php artisan test
 ```
 
@@ -282,7 +282,7 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 Run:
 
 ```bash
-cd /home/yasar/Desktop/kitchen_spurs/app
+cd /path/to/project/app
 php artisan migrate --force
 ```
 
